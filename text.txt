@@ -1,0 +1,4 @@
+node ace configure @adonisjs/lucid -> configure database
+node ace make:model Name -m -> create model and migration
+node ace migration:run  -> run migration
+node ace make:controller Name -> create controller
