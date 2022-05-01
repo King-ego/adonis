@@ -10,7 +10,6 @@ export default class MomentsController {
     extnames: ['jpg', 'png', 'gif'],
     size: '2mb',
   }
-
   public async store({ request, response }: HttpContextContract) {
     const body = request.body()
     const image = request.file('image', this.validatedOptions)
@@ -30,7 +29,7 @@ export default class MomentsController {
     response.status(201)
 
     return {
-      msg: 'moment criado com sucesso',
+      message: 'Momento criado com sucesso',
       data: moment,
     }
   }
@@ -68,7 +67,7 @@ export default class MomentsController {
     const moments = await Moment.findOrFail(params.id)
     const body = request.body()
 
-    moments.title = body.title
+    moments.name = body.title
     moments.description = body.description
 
     if (moments.image !== body.image || !moments.image) {
